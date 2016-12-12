@@ -7,12 +7,12 @@ import java.util.Scanner;
  * @since 2016. 12. 12.
  */
 public class Fibonacci {
-    public static int[] ints;
+    public static int[] dp;
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         final int i = s.nextInt();
-        ints = new int[100];
+        dp = new int[100];
         System.out.println(fibonacci(i));
     }
 
@@ -20,10 +20,10 @@ public class Fibonacci {
         if (i <= 1) {
             return i;
         }
-        if (ints[i] > 0) {
-            return ints[i];
+        if (dp[i] > 0) {
+            return dp[i];
         }
-        ints[i] = fibonacci(i - 1) + fibonacci(i - 2);
-        return ints[i];
+        dp[i] = fibonacci(i - 1) + fibonacci(i - 2);
+        return dp[i];
     }
 }
